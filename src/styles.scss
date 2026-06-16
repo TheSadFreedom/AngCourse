@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+@use "margins";
+
+:root {
+  --dark-color: #000000;
+  --light-color: #ffffff;
+  --primary-color: #AE7AFF;
+  --background-img: url(../public/assets/images/bg.png)
+}
+
+body {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  background-image: var(--background-img);
+}
+
+.btn {
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.h1{
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 800;
+}
+
+.h6{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 800;
+}
+
+.input{
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border: 1px solid var(--light-color);
+  border-radius: 4px;
+  padding: 12px 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  width: 100%;
+}
+
