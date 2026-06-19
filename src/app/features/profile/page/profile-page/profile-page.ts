@@ -7,6 +7,7 @@ import { ProfilePreviewComponent } from '../../components/profile-preview/profil
 import { ProfileFormComponent } from '../../components/profile-form/profile-form';
 import { ProfileSubscribers } from "../../components/profile-subscribers/profile-subscribers";
 import { ProfileUpload } from '../../components/profile-upload/profile-upload';
+import { ProfilePosts } from "../../components/profile-posts/profile-posts";
 
 @Component({
   selector: 'app-profile-page',
@@ -15,8 +16,9 @@ import { ProfileUpload } from '../../components/profile-upload/profile-upload';
     CommonModule,
     ProfilePreviewComponent,
     ProfileFormComponent,
-    ProfileSubscribers
-  ],
+    ProfileSubscribers,
+    ProfilePosts
+],
   templateUrl: './profile-page.html',
   styleUrls: ['./profile-page.scss']
 })

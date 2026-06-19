@@ -1,8 +1,8 @@
 <img
   class="avatar"
-  [src]="preview() || profileImg || 'assets/default-avatar.png'"
+  [src]="preview()
+    || (profileImg ? 'https://icherniakov.ru/yt-course/' + profileImg : null)"
 >
-
 <input
   #fileDrop
   type="file"
@@ -22,3 +22,5 @@
   <img src="assets/svg/Icon.svg" alt="">
   <p>Загрузите изображение</p>
 </div>
+
+

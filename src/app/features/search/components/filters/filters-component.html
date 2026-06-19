@@ -1,0 +1,23 @@
+<form class="profile-search-form__wrapper filtersContainer" [formGroup]="searchForm">
+
+    <div class="filterContainer">
+      <div class="labelInput">
+        <label>Имя пользователя</label>
+        <input type="text" class="searchInput" formControlName="firstName">
+      </div>
+    </div>
+
+    <div class="filterContainer">
+      <div class="labelInput">
+        <label>Фамилия пользователя</label>
+        <input type="text" class="searchInput" formControlName="lastName">
+      </div>
+    </div>
+
+    <div class="filterContainer">
+      <div class="labelInput">
+        <label>Навыки</label>
+        <input type="text" class="searchInput" formControlName="stack">
+      </div>
+    </div>
+</form>

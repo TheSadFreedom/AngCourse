@@ -20,6 +20,10 @@
   border-radius: 10px;
   color: #aaa;
   text-decoration: none;
+  &.active{
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color)
+  }
 }
 
 .menu-item:hover {

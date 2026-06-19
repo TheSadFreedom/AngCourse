@@ -1,0 +1,22 @@
+.filtersContainer{
+  background-color: var(--dark-color);
+  margin: 16px;
+  display: grid;grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  column-gap: 32px;
+  padding: 16px;
+  border: 1px solid var(--light-color);
+}
+
+.labelInput{
+  display: grid;
+  grid-template-rows: 24px 1fr;
+  color: var(--light-color)
+}
+
+.searchInput{
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--light-color);
+  padding: 12px;
+  color: var(--light-color);
+}

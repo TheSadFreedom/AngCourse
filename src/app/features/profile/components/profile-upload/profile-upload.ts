@@ -3,9 +3,10 @@ import {
   OnInit,
   inject,
   signal,
-  Output,
-  EventEmitter
+  EventEmitter,
+  Output
 } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { ProfileService } from '../../services/profile.service';
 import { DragonDrop } from '../../../../shared/directives/dragon-drop';
@@ -23,39 +24,39 @@ export class ProfileUpload implements OnInit {
 
   private profileService = inject(ProfileService);
 
-  profileImg: string | null = null;
+  // preview (может быть: blob или null)
   preview = signal<string | null>(null);
 
-  ngOnInit() {
+  // серверный аватар
+  profileImg: string | null = null;
+
+  ngOnInit(): void {
     this.profileService.getMe().subscribe(profile => {
       this.profileImg = profile.avatarUrl;
     });
   }
 
-  fileBrowserHandler(event: Event) {
+  fileBrowserHandler(event: Event): void {
     const input = event.target as HTMLInputElement;
     const file = input.files?.[0];
+
     if (!file) return;
+
     this.handleFile(file);
   }
 
-  onFileDropped(file: File | null) {
+  onFileDropped(file: File | null): void {
     if (!file) return;
+
     this.handleFile(file);
   }
 
-  private handleFile(file: File) {
+  private handleFile(file: File): void {
     if (!file.type.startsWith('image/')) return;
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      const result = reader.result;
-      if (typeof result === 'string') {
-        this.preview.set(result);
-      }
-    };
+    const url = URL.createObjectURL(file);
 
-    reader.readAsDataURL(file);
+    this.preview.set(url);
 
     this.fileSelected.emit(file);
   }

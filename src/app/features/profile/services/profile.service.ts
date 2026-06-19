@@ -21,11 +21,7 @@ export class ProfileService {
       size: params?.size ?? 10
     };
   }
-
-  getTestAccounts() {
-    return this.http.get<Profile[]>(`${this.baseApiUrl}test_accounts`);
-  }
-
+  
   getMe() {
     return this.http.get<Profile>(`${this.baseApiUrl}me`);
   }

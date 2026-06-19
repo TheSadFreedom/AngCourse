@@ -1,28 +1,26 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { ProfileCard } from '../../components/profile-card/profile-card';
-import { ProfileService } from '../../../profile/services/profile.service';
-import { Profile } from '../../../profile/models/profile.model';
-
+import { FiltersComponent } from '../../components/filters/filters-component';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-search-page',
   standalone: true,
-  imports: [CommonModule, ProfileCard],
+  imports: [CommonModule, ProfileCard, FiltersComponent],
   templateUrl: './search-page.html',
   styleUrls: ['./search-page.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchPage {
+export class SearchPage implements OnInit {
 
-  private profileService = inject(ProfileService);
+  private searchService = inject(SearchService);
 
-  // signal из Observable
-  profiles = toSignal(
-    this.profileService.getTestAccounts(),
-    {
-      initialValue: [] as Profile[]
-    }
-  );
+  profiles = this.searchService.profiles;
+
+  ngOnInit(): void {
+    this.searchService.getTestAccounts().subscribe(res => {
+      this.searchService.setProfiles(res);
+    });
+  }
 }
