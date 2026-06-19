@@ -1,0 +1,11 @@
+<img class="logo mb16" src="assets/svg/Content.svg" alt="">
+
+<nav class="menu mb16">
+  @for (item of menuItems; track item.link) {
+    <a class="menu-item" [routerLink]="item.link">
+      {{ item.label }}
+    </a>
+  }
+</nav>
+
+<app-short-subscriber-list></app-short-subscriber-list>

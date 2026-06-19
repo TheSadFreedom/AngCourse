@@ -1,0 +1,40 @@
+<div class="login-layout">
+
+  <form
+    class="loginForm"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()">
+
+    <h1 class="h1 mb64">Вход</h1>
+
+    <label class="loginLabel mb16">
+      Username
+      <input
+        class="input"
+        type="text"
+        placeholder="Введите логин"
+        formControlName="username"
+      >
+    </label>
+
+    <label class="loginLabel mb32">
+      Пароль
+      <input
+        class="input"
+        type="password"
+        placeholder="Введите пароль"
+        formControlName="password"
+      >
+    </label>
+
+    <button class="btn" type="submit">
+      Войти
+    </button>
+
+  </form>
+
+  <div class="login-visual">
+    <img src="assets/svg/Content.svg" alt="">
+  </div>
+
+</div>

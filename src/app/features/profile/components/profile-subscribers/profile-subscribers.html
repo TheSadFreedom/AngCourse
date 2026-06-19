@@ -1,0 +1,10 @@
+@if (subscribers$ | async; as data) {
+  <div subCount>
+    <p class="subLabel">Подписчики - {{data.total}}</p>
+
+  </div>
+
+  @for (user of data.items; track user.id) {
+    <img class="avatar" [src]="'https://icherniakov.ru/yt-course/' + user.avatarUrl" />
+  }
+}

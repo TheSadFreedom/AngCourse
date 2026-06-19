@@ -1,0 +1,52 @@
+<form class="form" [formGroup]="form" (ngSubmit)="onSave()">
+
+  <div class="names mb16">
+    <div class="labelInput">
+      <label>Имя</label>
+      <input type="text" class="profileInput" formControlName="firstName">
+    </div>
+
+    <div class="labelInput">
+      <label>Фамилия</label>
+      <input type="text" class="profileInput" formControlName="lastName">
+    </div>
+  </div>
+
+  <div class="tgUsername mb16">
+    <div class="labelInput">
+      <label>Telegram username</label>
+      <input type="text" class="profileInput" formControlName="username">
+    </div>
+  </div>
+
+  <div class="mb16">
+    <div class="labelInput">
+      <label>Описание</label>
+      <textarea class="formTextarea text" formControlName="description"></textarea>
+    </div>
+  </div>
+
+  <div class="mb16">
+  <div class="labelInput">
+    <label>Аватар</label>
+
+    <app-profile-upload
+      (fileSelected)="onAvatarSelected($event)">
+    </app-profile-upload>
+
+  </div>
+</div>
+
+  <div class="mb16">
+    <div class="labelInput">
+      <label>Навыки</label>
+      <input type="text" class="profileInput" formControlName="stack">
+    </div>
+  </div>
+
+  <div class="btns">
+    <button class="btn" type="submit" >Сохранить</button>
+    <button class="btn" type="button" (click)="onClose()">Закрыть</button>
+  </div>
+
+</form>

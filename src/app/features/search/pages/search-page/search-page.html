@@ -1,0 +1,11 @@
+<div class="profileCardWrapper">
+
+  @for (profile of profiles(); track profile.id) {
+    <app-profile-card [profile]="profile" />
+  }
+
+  @empty {
+    <p>Загрузка...</p>
+  }
+
+</div>

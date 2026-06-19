@@ -5,13 +5,16 @@
   --dark-color: #000000;
   --light-color: #ffffff;
   --primary-color: #AE7AFF;
-  --background-img: url(../public/assets/images/bg.png)
+  --background-img: url('/assets/images/bg.png');
+  --profile-img: url('/assets/svg/account_circle.svg');
 }
 
 body {
   background-color: var(--dark-color);
   color: var(--light-color);
   background-image: var(--background-img);
+  margin: 0;
+  padding: 0;
 }
 
 .btn {
@@ -24,6 +27,8 @@ body {
   line-height: 24px;
   width: 100%;
   cursor: pointer;
+  width: auto;
+  height: auto;
 }
 
 .h1{
@@ -50,3 +55,9 @@ body {
   width: 100%;
 }
 
+.avatar{
+  background-image: var(--profile-img);
+  background-color: var(--light-color);
+  background-size: 100%;
+  border-radius: 50%;
+}

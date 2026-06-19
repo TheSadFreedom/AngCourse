@@ -1,0 +1,13 @@
+<app-profile-preview
+  [profile]="profile()"
+  (edit)="openEdit()">
+</app-profile-preview>
+
+@if (isEditMode()) {
+  <app-profile-form
+    (saved)="onProfileSaved($event)"
+    (close)="closeEdit()">
+  </app-profile-form>
+}
+
+<app-profile-subscribers></app-profile-subscribers>

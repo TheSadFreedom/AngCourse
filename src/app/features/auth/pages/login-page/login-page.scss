@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  height: 100dvh;
+}
+
+.login-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  align-items: center;
+  margin: 0 5%;
+  gap: 40px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginLabel {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  gap: 6px;
+}
+
+.input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+img {
+  max-width: 100%;
+  justify-self: center;
+  align-self: center;
+}

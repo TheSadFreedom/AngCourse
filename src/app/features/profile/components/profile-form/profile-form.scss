@@ -1,0 +1,62 @@
+.form{
+  background-color: var(--dark-color);
+  border: 1px solid var(--light-color);
+  border-radius: 2px;
+  padding: 32px;
+}
+
+.names{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+}
+
+.labelInput{
+  display: grid;
+  grid-template-rows: 24px 1fr;
+  color: var(--light-color)
+}
+
+.profileInput{
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--light-color);
+  padding: 12px;
+  color: var(--light-color);
+}
+
+.formTextarea{
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border: none;
+  border-bottom: 1px solid var(--light-color);
+  padding: 12px;
+  resize:vertical;
+}
+
+.AvatarUpload{
+  display: grid;
+  grid-template-rows: 24px 1fr;
+}
+
+.imgUploadCont{
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  column-gap: 16px;
+  border-bottom: 1px solid var(--light-color);
+  padding-bottom: 16px;
+}
+
+.avatar{
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+
+.btns{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+}
+
+

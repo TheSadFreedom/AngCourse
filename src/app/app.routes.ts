@@ -1,17 +1,26 @@
 import { Routes } from '@angular/router';
-import { LoginPage } from './pages/login-page/login-page';
-import { SearchPage } from './pages/search-page/search-page';
-import { ProfilePage } from './pages/profile-page/profile-page';
-import { LayoutComponent } from './components/layout-component/layout-component';
-import { canActivateAuth } from './pages/login-page/guards/access.guard';
+import { MainLayoutComponent } from './layout/main-layout/main-layout';
+import { authGuard } from './core/auth/auth.guard';
+import { SearchPage } from './features/search/pages/search-page/search-page';
+import { LoginPage } from './features/auth/pages/login-page/login-page';
+import { ProfilePage } from './features/profile/page/profile-page/profile-page';
+import { SubscribersPage } from './features/subscribers/page/subscribers-page/subscribers-page';
 
-export const routes: Routes = [{
-  path: '', component: LayoutComponent, children: [
-    {path: '', component: SearchPage},
-    {path: 'profile', component: ProfilePage}
-  ],
-  canActivate: [canActivateAuth]
-},
-  {path: 'login', component: LoginPage},
+
+export const routes: Routes = [
+  {
+    path: '',
+    component: MainLayoutComponent,
+    canActivate: [authGuard],
+    children: [
+      { path: '', component: SearchPage },
+      { path: 'search', component: SearchPage },
+      { path: 'profile', component: ProfilePage },
+      { path: 'subscribers', component: SubscribersPage },
+    ]
+  },
+  {
+    path: 'login',
+    component: LoginPage
+  }
 ];
-

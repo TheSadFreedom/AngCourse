@@ -1,0 +1,47 @@
+@if (profile) {
+  <div class="profileCardContainer">
+
+    <!-- AVATAR -->
+    <div class="profileCardAvatarContainer">
+      <img
+        [src]="profile.avatarUrl | imageUrl"
+        class="profileCardAvatar"
+        alt="avatar"
+      >
+
+      <div class="profileCardName">
+        <strong>
+          {{ profile.firstName }} {{ profile.lastName }}
+        </strong>
+
+        <span>
+          {{ profile.username }}
+        </span>
+      </div>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="profileCardDescription">
+      {{ profile.description }}
+    </div>
+
+    <!-- TAGS -->
+    <div class="profileCardTags">
+      @for (tag of profile.stack; track tag) {
+        <div class="profileCardTag">
+          {{ tag }}
+        </div>
+      }
+    </div>
+
+    <!-- ACTION -->
+    <div class="profileCardActionButtons">
+      <button class="btn">
+        Подписаться
+      </button>
+    </div>
+
+  </div>
+} @else {
+  <p>Профиля нет</p>
+}

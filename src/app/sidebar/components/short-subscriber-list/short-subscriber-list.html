@@ -1,0 +1,13 @@
+<div class="subsContainer">
+  <p class="shortSubsLabel mb16">Подписчики</p>
+  @if (subscribers$ | async; as data) {
+
+  @for (user of data.items; track user.id) {
+    <div class="shortSubsContainer mb8">
+      <img class="avatar" [src]="'https://icherniakov.ru/yt-course/' + user.avatarUrl">
+      <div class="shotrSubsUsername">{{ user.username }}</div>
+    </div>
+  }
+  }
+  <a [routerLink]="['/subscribers']">Все подписчики</a>
+</div>
