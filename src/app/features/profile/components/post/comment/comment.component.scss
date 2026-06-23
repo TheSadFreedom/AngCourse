@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+.comment {
+  display: grid;
+  gap: 6px;
+
+  padding: 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--light-transparent-color);
+  font-size: 12px;
+}
+
+.comment-text {
+  color: var(--light-color);
+  font-size: 13px;
+}

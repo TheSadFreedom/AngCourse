@@ -1,0 +1,40 @@
+@if (post(); as post) {
+
+<main class="post">
+
+  <div class="post-header">
+    <strong>
+      {{ post.author.firstName }}
+      {{ post.author.lastName }}
+    </strong>
+
+    <span>
+      {{ post.createdAt | timeAgo }}
+    </span>
+  </div>
+
+  <p class="post-text">
+    {{ post.content }}
+  </p>
+
+  <div class="post-counters">
+    <span>
+      💬 {{ comments().length }}
+    </span>
+  </div>
+
+  <div class="post__comments-wrapper">
+    @for (comment of comments(); track comment.id) {
+      <app-comment [comment]="comment"></app-comment>
+    }
+  </div>
+
+  <ui-input
+    placeholder="Написать комментарий..."
+    [autoResize]="true"
+    (submit)="onCreateComment($event)">
+  </ui-input>
+
+</main>
+
+}

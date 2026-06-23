@@ -1,0 +1,13 @@
+<div class="ui-input">
+
+  <avatar-component [profileId]="profileId" [width]="40" [height]="40">
+  </avatar-component>
+
+  <textarea class="input" [value]="value" [placeholder]="placeholder" [disabled]="disabled" (input)="onInput($event)">
+  </textarea>
+
+  <button type="button" class="btn-icon" (click)="onSubmit()">
+    <img src="/assets/svg/send.svg" alt="Send">
+  </button>
+
+</div>

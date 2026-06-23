@@ -1,0 +1,12 @@
+:host{
+  border: 1px solid var(--light-color);
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.last-message__wrapper{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}

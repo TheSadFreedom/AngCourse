@@ -1,4 +1,17 @@
 :host{
-  padding: 32px;
+  padding: 0 32px;
   column-gap: 10px;
+}
+
+.MainProfileContainer{
+  margin: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  column-gap: 64px;
+}
+
+.right{
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  column-gap: 64px;
 }

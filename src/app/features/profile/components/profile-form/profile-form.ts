@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Profile } from '../../models/profile.model';
 import { ProfileService } from '../../services/profile.service';
-import { ProfileUpload } from '../profile-upload/profile-upload';
+import { ProfileUpload } from './profile-upload/profile-upload';
 
 @Component({
   selector: 'app-profile-form',
@@ -69,9 +69,8 @@ export class ProfileFormComponent implements OnInit {
     this.profileService.patchProfile(payload)
       .subscribe(profile => {
 
-        // upload avatar если есть
         if (this.selectedAvatar) {
-          this.profileService.uploaderAvatar(this.selectedAvatar)
+          this.profileService.uploadAvatar(this.selectedAvatar)
             .subscribe();
         }
 

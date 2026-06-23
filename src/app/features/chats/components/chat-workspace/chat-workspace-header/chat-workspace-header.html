@@ -1,0 +1,7 @@
+@if (profile(); as profile) {
+  <div class="companion-wrapper">
+    <avatar-component [profileId]="profile.id" [width]="40" [height]="40"/>
+
+    <div class="subtitle">{{ profile.firstName }} {{ profile.lastName }}</div>
+  </div>
+}

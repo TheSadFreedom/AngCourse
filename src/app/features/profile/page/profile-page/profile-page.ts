@@ -6,8 +6,8 @@ import { Profile } from '../../models/profile.model';
 import { ProfilePreviewComponent } from '../../components/profile-preview/profile-preview';
 import { ProfileFormComponent } from '../../components/profile-form/profile-form';
 import { ProfileSubscribers } from "../../components/profile-subscribers/profile-subscribers";
-import { ProfileUpload } from '../../components/profile-upload/profile-upload';
-import { ProfilePosts } from "../../components/profile-posts/profile-posts";
+import { PostFeedComponent } from "../../components/post-feed/post-feed.component";
+import { ProfileDescription } from "../../components/profile-description/profile-description";
 
 @Component({
   selector: 'app-profile-page',
@@ -17,7 +17,8 @@ import { ProfilePosts } from "../../components/profile-posts/profile-posts";
     ProfilePreviewComponent,
     ProfileFormComponent,
     ProfileSubscribers,
-    ProfilePosts
+    PostFeedComponent,
+    ProfileDescription
 ],
   templateUrl: './profile-page.html',
   styleUrls: ['./profile-page.scss']
@@ -52,7 +53,7 @@ export class ProfilePage implements OnInit {
   }
 
   onAvatarSelected(file: File) {
-    this.profileService.uploaderAvatar(file).subscribe(() => {
+    this.profileService.uploadAvatar(file).subscribe(() => {
       this.loadProfile();
     });
   }

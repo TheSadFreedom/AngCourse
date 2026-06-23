@@ -1,14 +1,21 @@
 @if (profile) {
 <div class="profilePreview_Container">
-  <img class="avatar" [src]="'https://icherniakov.ru/yt-course/' + profile.avatarUrl">
-
+  <avatar-component [profileId]="profile.id" [width]="140" [height]="140" />
   <div class="rCont">
-    <h2>{{ profile.firstName }} {{ profile.lastName }}</h2>
-    <p class="username">{{ profile.username }}</p>
+
+    <h2>
+      {{ profile.firstName }} {{ profile.lastName }}
+    </h2>
+
+    <p class="username">
+      @{{ profile.username }}
+    </p>
   </div>
 
-  <button class="profileSettingsBtn btn" (click)="onEdit()">
-    редактировать
-  </button>
 </div>
+
+<button class="profileSettingsBtn btn" (click)="onEdit()">
+  редактировать
+</button>
+
 }

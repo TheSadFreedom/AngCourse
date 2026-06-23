@@ -1,0 +1,15 @@
+<div #scrollContainer class="messages-container">
+
+  @for (group of groupedMessages(); track group.label) {
+
+    <div class="time-divider">
+      {{ group.label }}
+    </div>
+
+    @for (message of group.messages; track message.id) {
+      <app-chat-message [message]="message"></app-chat-message>
+    }
+
+  }
+
+</div>

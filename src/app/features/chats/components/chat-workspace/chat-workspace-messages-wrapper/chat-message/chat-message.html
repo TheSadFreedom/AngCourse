@@ -1,0 +1,12 @@
+@if (message(); as message) {
+  <div class="message-container mb16">
+    <div class="message-header">
+      <avatar-component [profileId]="message.user?.id" [width]="40" [height]="40"/>
+      <strong class="medium-text mb8">{{ message.user?.firstName }} {{ message.user?.lastName }} {{ message.createdAt | date: 'HH:mm'}}</strong>
+    </div>
+
+    <div class="message-text medium-text">
+      {{ message.text }}
+    </div>
+  </div>
+}

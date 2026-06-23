@@ -1,0 +1,7 @@
+@if (chat(); as chat) {
+  <avatar-component [profileId]="chat.userFrom.id" [width]="40" [height]="40"/>
+  <div class="last-message__wrapper">
+    <div class="medium-text"> {{ chat.userFrom.firstName }} {{ chat.userFrom.lastName }}</div>
+    <div class="medium-text"> {{ chat.message ?? '...' }}</div>
+  </div>
+}

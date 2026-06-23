@@ -1,0 +1,17 @@
+@if (chatMeta$ | async; as chat) {
+
+  <app-chat-workspace-header
+    [profile]="chat.companion">
+  </app-chat-workspace-header>
+
+  <app-chat-workspace-messages-wrapper
+    [chatId]="chat.id">
+  </app-chat-workspace-messages-wrapper>
+
+  <ui-input
+    placeholder="Введите сообщение..."
+    [autoResize]="true"
+    (submit)="onSendMessage(chat.id, $event)">
+  </ui-input>
+
+}

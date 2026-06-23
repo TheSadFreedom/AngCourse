@@ -1,1 +1,17 @@
-<p>profile-description works!</p>
+@if (profile$ | async; as profile) {
+<div class="profileDiscription_Container">
+  <div>
+    <h2 class="mb16">Навыки</h2>
+    <div class="skills">
+      @for (skill of profile.stack; track skill) {
+      <span class="skill">{{ skill }}</span>
+      }
+    </div>
+
+  </div>
+  <div>
+    <h2 class="mb16">О себе</h2>
+    <textarea class="description">{{ profile.description }}</textarea>
+  </div>
+</div>
+}

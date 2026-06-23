@@ -1,0 +1,26 @@
+
+.description{
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: auto;
+  color: var(--light-color);
+  border: none;
+  font-size: 12;
+  line-height: 16px;
+  font-weight: 500;
+  resize: none;
+}
+
+.skills{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 8px;
+  row-gap: 8px;
+  margin-bottom: 16px;
+}
+
+.skill{
+  border: 1px solid var(--light-color);
+  border-radius: 5px;
+  padding: 5px;
+}

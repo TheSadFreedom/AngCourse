@@ -1,0 +1,16 @@
+@if (comment(); as comment) {
+<div class="comment">
+
+  <header class="comment-header">
+    <span>{{ comment.author.username }}</span>
+
+    <span class="comment-time">
+      {{ comment.createdAt | timeAgo }}
+    </span>
+  </header>
+
+  <div class="comment-text">
+    {{ comment.text }}
+  </div>
+</div>
+}

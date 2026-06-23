@@ -1,0 +1,15 @@
+<div class="post-feed">
+
+  <ui-input
+    placeholder="Что нового?"
+    [autoResize]="true"
+    (submit)="onCreatePost($event)">
+  </ui-input>
+
+  <div class="feed-list">
+    @for (post of feed(); track post.id) {
+      <app-post [post]="post"></app-post>
+    }
+  </div>
+
+</div>

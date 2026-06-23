@@ -1,0 +1,9 @@
+<img class="avatar" [src]="preview()
+    || (profileImg ? 'https://icherniakov.ru/yt-course/' + profileImg : null)">
+<input #fileDrop type="file" accept="image/*" hidden (change)="fileBrowserHandler($event)">
+
+<div dragonDrop class="dropzone" tabindex="0" (click)="fileDrop.click()" (keyup.enter)="fileDrop.click()"
+  (fileDropped)="onFileDropped($event)">
+  <img src="assets/svg/Icon.svg" alt="">
+  <p>Загрузите изображение</p>
+</div>
